@@ -31,3 +31,11 @@ Card(rank='2', suit='spades')
 Card(rank='3', suit='spades')
 Card(rank='4', suit='spades')
 ...
+
+# Test iterating the deck in reverse order.
+>>> for card in reversed(deck):  # doctest: +ELLIPSIS
+...     print(card)
+Card(rank='A', suit='hearts')
+Card(rank='K', suit='hearts')
+Card(rank='Q', suit='hearts')
+...
