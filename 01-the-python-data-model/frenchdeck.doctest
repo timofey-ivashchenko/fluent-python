@@ -64,3 +64,16 @@ Card(rank='A', suit='clubs')
 Card(rank='A', suit='diamonds')
 Card(rank='A', suit='hearts')
 Card(rank='A', suit='spades')
+
+# Test sorting the deck in descending order.
+>>> for card in sorted(deck, key=spades_high, reverse=True):  # doctest: +ELLIPSIS
+...     print(card)
+Card(rank='A', suit='spades')
+Card(rank='A', suit='hearts')
+Card(rank='A', suit='diamonds')
+Card(rank='A', suit='clubs')
+...
+Card(rank='2', suit='spades')
+Card(rank='2', suit='hearts')
+Card(rank='2', suit='diamonds')
+Card(rank='2', suit='clubs')
