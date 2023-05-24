@@ -52,6 +52,12 @@ False
 ...     rank_value = FrenchDeck.ranks.index(card.rank)
 ...     return rank_value * len(suit_values) + suit_values[card.suit]
 
+# Test the ranking of the cards in the deck.
+>>> spades_high(Card('2', 'clubs'))
+0
+>>> spades_high(Card('A', 'spades'))
+51
+
 # Test sorting the deck in ascending order.
 >>> for card in sorted(deck, key=spades_high):  # doctest: +ELLIPSIS
 ...     print(card)
