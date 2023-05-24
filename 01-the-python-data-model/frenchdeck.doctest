@@ -1,0 +1,6 @@
+>>> from frenchdeck import Card
+
+# Test the creation of a playing card.
+>>> beer_card = Card('7', 'diamonds')
+>>> beer_card
+Card(rank='7', suit='diamonds')
