@@ -11,3 +11,9 @@ Card(rank='7', suit='diamonds')
 >>> deck = FrenchDeck()
 >>> len(deck)
 52
+
+# Test getting a card from the deck.
+>>> deck[0]
+Card(rank='2', suit='spades')
+>>> deck[-1]
+Card(rank='A', suit='hearts')
