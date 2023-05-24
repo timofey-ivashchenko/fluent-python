@@ -39,3 +39,9 @@ Card(rank='A', suit='hearts')
 Card(rank='K', suit='hearts')
 Card(rank='Q', suit='hearts')
 ...
+
+# Test implicit iteration when executing the in operator.
+>>> Card('Q', 'hearts') in deck
+True
+>>> Card('7', 'beasts') in deck
+False
