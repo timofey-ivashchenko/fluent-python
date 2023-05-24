@@ -4,3 +4,10 @@
 >>> beer_card = Card('7', 'diamonds')
 >>> beer_card
 Card(rank='7', suit='diamonds')
+
+>>> from frenchdeck import FrenchDeck
+
+# Test the number of cards in the deck.
+>>> deck = FrenchDeck()
+>>> len(deck)
+52
