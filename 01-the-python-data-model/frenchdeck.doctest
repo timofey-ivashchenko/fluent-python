@@ -40,6 +40,14 @@ Card(rank='K', suit='hearts')
 Card(rank='Q', suit='hearts')
 ...
 
+# Test iterating the deck using the enumerate function.
+>>> for n, card in enumerate(deck, start=1):  # doctest: +ELLIPSIS
+...     print(n, card)
+1 Card(rank='2', suit='spades')
+2 Card(rank='3', suit='spades')
+3 Card(rank='4', suit='spades')
+...
+
 # Test implicit iteration when executing the in operator.
 >>> Card('Q', 'hearts') in deck
 True
