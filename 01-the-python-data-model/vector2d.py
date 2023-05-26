@@ -38,7 +38,7 @@ class Vector:
         return Vector(self.x + other.x, self.y + other.y)
 
     def __bool__(self):
-        return bool(abs(self))
+        return bool(self.x or self.y)
 
     def __init__(self, x=0, y=0):
         self.x = x
