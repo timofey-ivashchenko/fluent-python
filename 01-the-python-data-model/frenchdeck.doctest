@@ -1,0 +1,93 @@
+>>> from frenchdeck import Card
+
+# Test the creation of a playing card.
+>>> beer_card = Card('7', 'diamonds')
+>>> beer_card
+Card(rank='7', suit='diamonds')
+
+>>> from frenchdeck import FrenchDeck
+
+# Test the number of cards in the deck.
+>>> deck = FrenchDeck()
+>>> len(deck)
+52
+
+# Test getting a card from the deck.
+>>> deck[0]
+Card(rank='2', suit='spades')
+>>> deck[-1]
+Card(rank='A', suit='hearts')
+
+# Test automatic slice support.
+>>> deck[:3]
+[Card(rank='2', suit='spades'), Card(rank='3', suit='spades'), Card(rank='4', suit='spades')]
+>>> deck[12::13]
+[Card(rank='A', suit='spades'), Card(rank='A', suit='diamonds'), Card(rank='A', suit='clubs'), Card(rank='A', suit='hearts')]
+
+# Test iterating the deck.
+>>> for card in deck:  # doctest: +ELLIPSIS
+...     print(card)
+Card(rank='2', suit='spades')
+Card(rank='3', suit='spades')
+Card(rank='4', suit='spades')
+...
+
+# Test iterating the deck in reverse order.
+>>> for card in reversed(deck):  # doctest: +ELLIPSIS
+...     print(card)
+Card(rank='A', suit='hearts')
+Card(rank='K', suit='hearts')
+Card(rank='Q', suit='hearts')
+...
+
+# Test iterating the deck using the enumerate function.
+>>> for n, card in enumerate(deck, start=1):  # doctest: +ELLIPSIS
+...     print(n, card)
+1 Card(rank='2', suit='spades')
+2 Card(rank='3', suit='spades')
+3 Card(rank='4', suit='spades')
+...
+
+# Test implicit iteration when executing the in operator.
+>>> Card('Q', 'hearts') in deck
+True
+>>> Card('7', 'beasts') in deck
+False
+
+>>> suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)
+
+>>> def spades_high(card):
+...     rank_value = FrenchDeck.ranks.index(card.rank)
+...     return rank_value * len(suit_values) + suit_values[card.suit]
+
+# Test the ranking of the cards in the deck.
+>>> spades_high(Card('2', 'clubs'))
+0
+>>> spades_high(Card('A', 'spades'))
+51
+
+# Test sorting the deck in ascending order.
+>>> for card in sorted(deck, key=spades_high):  # doctest: +ELLIPSIS
+...     print(card)
+Card(rank='2', suit='clubs')
+Card(rank='2', suit='diamonds')
+Card(rank='2', suit='hearts')
+Card(rank='2', suit='spades')
+...
+Card(rank='A', suit='clubs')
+Card(rank='A', suit='diamonds')
+Card(rank='A', suit='hearts')
+Card(rank='A', suit='spades')
+
+# Test sorting the deck in descending order.
+>>> for card in sorted(deck, key=spades_high, reverse=True):  # doctest: +ELLIPSIS
+...     print(card)
+Card(rank='A', suit='spades')
+Card(rank='A', suit='hearts')
+Card(rank='A', suit='diamonds')
+Card(rank='A', suit='clubs')
+...
+Card(rank='2', suit='spades')
+Card(rank='2', suit='hearts')
+Card(rank='2', suit='diamonds')
+Card(rank='2', suit='clubs')

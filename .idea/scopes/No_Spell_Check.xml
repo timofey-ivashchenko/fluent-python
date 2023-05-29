@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="No Spell Check" pattern="file:Pipfile.lock||file:Структура книги.txt" />
+</component>
