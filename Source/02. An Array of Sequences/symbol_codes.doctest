@@ -1,0 +1,13 @@
+>>> symbols = '$¢£¥€¤'
+
+# Build a list of Unicode code points from a string.
+>>> codes = []
+>>> for symbol in symbols:
+...     codes.append(ord(symbol))
+>>> codes
+[36, 162, 163, 165, 8364, 164]
+
+# Build a list of Unicode code points from a string, using a listcomp.
+>>> codes = [ord(symbol) for symbol in symbols]
+>>> codes
+[36, 162, 163, 165, 8364, 164]
