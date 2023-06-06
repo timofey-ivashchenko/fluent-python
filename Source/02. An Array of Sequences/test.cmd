@@ -2,3 +2,4 @@ python -m doctest symbol_codes.doctest
 python -m doctest listcomp_genexp_local_scope.doctest
 python -m doctest listcomp_vs_filter_and_map.doctest
 python -m doctest cartesian_product.doctest
+python -m doctest initializing_a_tuple_and_an_array_from_a_generator_expression.doctest
