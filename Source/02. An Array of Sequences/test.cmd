@@ -1,1 +1,0 @@
-python -m doctest cartesian_product_in_a_generator_expression.doctest
