@@ -1,4 +1,3 @@
-# The same list built by a listcomp and a filter/map composition.
 >>> symbols = '$¢£¥€¤'
 >>> beyond_ascii = [ord(s) for s in symbols if ord(s) > 127]
 >>> beyond_ascii
