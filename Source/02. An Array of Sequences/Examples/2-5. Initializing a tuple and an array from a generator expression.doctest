@@ -4,10 +4,10 @@
 # is no need to duplicate the enclosing parentheses.
 >>> tuple(ord(symbol) for symbol in symbols)
 (36, 162, 163, 165, 8364, 164)
-
 >>> from array import array
 
 # The array constructor takes two arguments, so the parentheses around the
-# generator expression are mandatory.
+# generator expression are mandatory. The first argument of the array
+# constructor defines the storage type used for the numbers in the array.
 >>> array('I', (ord(symbol) for symbol in symbols))
 array('I', [36, 162, 163, 165, 8364, 164])
