@@ -1,0 +1,6 @@
+>>> from os.path import split
+>>> _, filename = split('/home/luciano/.ssh/id_rsa.pub')
+>>> _
+'/home/luciano/.ssh'
+>>> filename
+'id_rsa.pub'
