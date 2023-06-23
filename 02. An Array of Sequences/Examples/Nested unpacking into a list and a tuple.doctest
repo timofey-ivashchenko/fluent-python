@@ -1,0 +1,28 @@
+>>> def query_returning_single_row():
+...     return ('USD', 'United States dollar'),
+...
+>>> def query_returning_single_row_with_single_field():
+...     return ('USD',),
+...
+>>> def query_returning_multiple_rows():
+...     return (
+...         ('UAH', 'Ukrainian hryvnia'),
+...         ('USD', 'United States dollar'),
+...     )
+...
+>>> [record] = query_returning_single_row()
+>>> record
+('USD', 'United States dollar')
+>>> [record] = query_returning_multiple_rows()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: too many values to unpack (expected 1)
+>>> [[field]] = query_returning_single_row_with_single_field()
+>>> field
+'USD'
+>>> (record,) = query_returning_single_row()
+>>> record
+('USD', 'United States dollar')
+>>> ((field,),) = query_returning_single_row_with_single_field()
+>>> field
+'USD'
