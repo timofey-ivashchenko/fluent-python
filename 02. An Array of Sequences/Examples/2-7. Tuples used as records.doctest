@@ -11,6 +11,7 @@
 ...     # The % formatting operator understands tuples and treats each item as
 ...     # a separate field.
 ...     print('%s/%s' % passport)
+...
 BRA/CE342567
 ESP/XDA205856
 USA/31195855
@@ -19,6 +20,7 @@ USA/31195855
 >>> # we assign it to _, a dummy variable.
 >>> for country, _ in traveler_ids:
 ...     print(country)
+...
 USA
 BRA
 ESP
