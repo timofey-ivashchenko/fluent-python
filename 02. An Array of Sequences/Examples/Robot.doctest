@@ -1,0 +1,14 @@
+>>> from Robot import Robot
+>>> robot = Robot()
+>>> robot.handle_command(['BEEPER', 440, 3])
+Robot.beep(frequency=440, times=3)
+>>> robot.handle_command(['NECK', 75])
+Robot.rotate_neck(angle=75)
+>>> robot.handle_command(['LED', 1, 9])
+LED(id_=1).set_brightness(intensity=9)
+>>> robot.handle_command(['LED', 2, 255, 0, 0])
+LED(id_=2).set_color(red=255, green=0, blue=0)
+>>> robot.handle_command(['GO', 'ahead'])
+Traceback (most recent call last):
+...
+Robot.InvalidCommand: ['GO', 'ahead']
