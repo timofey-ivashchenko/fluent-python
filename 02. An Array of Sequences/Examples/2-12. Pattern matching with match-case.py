@@ -33,6 +33,10 @@ def evaluate(exp: Expression, env: Environment) -> Any:
         # followed by an instance of Symbol.
         case ['define', Symbol() as name, value_exp]:
             env[name] = evaluate(value_exp, env)
+        # Shortcut syntax for function definition:
+        # (define (name parms…) body1 body2…)
+        case ['define', [Symbol() as name, *parms], *body] if body:
+            env[name] = Procedure(parms, body, env)
         # ... more lines omitted.
         # It is good practice to have a catch-all case. In this example, if exp
         # doesn't match any of the patterns, the expression is malformed, and I
