@@ -1,0 +1,8 @@
+>>> # Create a list of three lists of three items each. Inspect the structure.
+>>> board = [['_'] * 3 for i in range(3)]
+>>> board
+[['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
+>>> # Place a mark in row 1, column 2, and check the result.
+>>> board[1][2] = 'X'
+>>> board
+[['_', '_', '_'], ['_', '_', 'X'], ['_', '_', '_']]
