@@ -1,0 +1,11 @@
+>>> row = ['_'] * 3
+>>> board = []
+>>> for i in range(3):
+...     # The same row is appended three times to board.
+...     board.append(row)
+...
+>>> board
+[['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
+>>> board[2][0] = 'X'
+>>> board
+[['X', '_', '_'], ['X', '_', '_'], ['X', '_', '_']]
