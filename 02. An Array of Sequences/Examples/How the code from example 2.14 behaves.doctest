@@ -1,0 +1,12 @@
+>>> board = []
+>>> for i in range(3):
+...     # Each iteration builds a new row and appends it to board.
+...     row = ['_'] * 3
+...     board.append(row)
+...
+>>> board
+[['_', '_', '_'], ['_', '_', '_'], ['_', '_', '_']]
+>>> board[2][0] = 'X'
+>>> # Only row 2 is changed, as expected.
+>>> board
+[['_', '_', '_'], ['_', '_', '_'], ['X', '_', '_']]
