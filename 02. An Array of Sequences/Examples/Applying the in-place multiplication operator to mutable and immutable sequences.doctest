@@ -1,0 +1,19 @@
+>>> l = [1, 2, 3]
+>>> # ID of the initial list.
+>>> id_ = id(l)
+>>> l *= 2
+>>> l
+[1, 2, 3, 1, 2, 3]
+>>> # After multiplication, the list is the same object, with new items
+>>> # appended.
+>>> id(l) == id_
+True
+>>> t = (1, 2, 3)
+>>> # ID of the initial tuple.
+>>> id_ = id(t)
+>>> t *= 2
+>>> t
+(1, 2, 3, 1, 2, 3)
+>>> # After multiplication, a new tuple was created.
+>>> id(t) == id_
+False
