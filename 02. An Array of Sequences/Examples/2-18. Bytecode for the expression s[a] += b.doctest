@@ -1,0 +1,16 @@
+>>> from dis import dis
+>>> dis('s[a] += b')
+  0           0 RESUME                   0
+<BLANKLINE>
+  1           2 LOAD_NAME                0 (s)
+              4 LOAD_NAME                1 (a)
+              6 COPY                     2
+              8 COPY                     2
+             10 BINARY_SUBSCR
+             20 LOAD_NAME                2 (b)
+             22 BINARY_OP               13 (+=)
+             26 SWAP                     3
+             28 SWAP                     2
+             30 STORE_SUBSCR
+             34 LOAD_CONST               0 (None)
+             36 RETURN_VALUE
