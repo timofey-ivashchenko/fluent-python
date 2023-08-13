@@ -1,0 +1,33 @@
+>>> fruits = ['grape', 'raspberry', 'apple', 'banana']
+>>> # This produces a new list of strings sorted alphabetically. The words in
+>>> # this example are sorted alphabetically because they are 100% made of
+>>> # lowercase ASCII characters. By default, Python sorts strings
+>>> # lexicographically by character code. That means ASCII uppercase letters
+>>> # will come before lowercase letters, and non-ASCII characters are unlikely
+>>> # to be sorted in a sensible way.
+>>> sorted(fruits)
+['apple', 'banana', 'grape', 'raspberry']
+>>> # Inspecting the original list, we see it is unchanged.
+>>> fruits
+['grape', 'raspberry', 'apple', 'banana']
+>>> # This is the previous “alphabetical” ordering, reversed.
+>>> sorted(fruits, reverse=True)
+['raspberry', 'grape', 'banana', 'apple']
+>>> # A new list of strings, now sorted by length. Because the sorting
+>>> # algorithm is stable, “grape” and “apple”, both of length 5, are in the
+>>> # original order.
+>>> sorted(fruits, key=len)
+['grape', 'apple', 'banana', 'raspberry']
+>>> # These are the strings sorted by length in descending order. It is not the
+>>> # reverse of the previous result because the sorting is stable, so again
+>>> # “grape” appears before “apple”.
+>>> sorted(fruits, key=len, reverse=True)
+['raspberry', 'banana', 'grape', 'apple']
+>>> # So far, the ordering of the original fruits list has not changed.
+>>> fruits
+['grape', 'raspberry', 'apple', 'banana']
+>>> # This sorts the list in place, and returns None (which the console omits).
+>>> fruits.sort()
+>>> # Now fruits is sorted.
+>>> fruits
+['apple', 'banana', 'grape', 'raspberry']
