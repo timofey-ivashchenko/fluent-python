@@ -1,0 +1,20 @@
+>>> from array import array
+>>> numbers = array('h', [-2, -1, 0, 1, 2])
+>>> # Build memoryview from array of 5 16-bit signed integers (typecode 'h').
+>>> memv = memoryview(numbers)
+>>> len(memv)
+5
+>>> # memv sees the same 5 items in the array.
+>>> memv[0]
+-2
+>>> # Create memv_oct by casting the elements of memv to bytes (typecode 'B').
+>>> memv_oct = memv.cast('B')
+>>> # Export elements of memv_oct as a list of 10 bytes, for inspection.
+>>> memv_oct.tolist()
+[254, 255, 255, 255, 0, 0, 1, 0, 2, 0]
+>>> # Assign value 4 to byte offset 5.
+>>> memv_oct[5] = 4
+>>> # Note the change to numbers: a 4 in the most significant byte of a 2-byte
+>>> # unsigned integer is 1024.
+>>> numbers
+array('h', [-2, -1, 1024, 1, 2])
