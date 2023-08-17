@@ -1,0 +1,35 @@
+>>> # Import NumPy, after installing (it's not in the Python standard library).
+>>> # Conventionally, numpy is imported as np.
+>>> import numpy as np
+>>> # Build and inspect a numpy.ndarray with integers 0 to 11.
+>>> a = np.arange(12)
+>>> a
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11])
+>>> type(a)
+<class 'numpy.ndarray'>
+>>> # Inspect the dimensions of the array:
+>>> # this is a one-dimensional, 12-element array.
+>>> a.shape
+(12,)
+>>> # Change the shape of the array, adding one dimension,
+>>> # then inspecting the result.
+>>> a.shape = 3, 4
+>>> a
+array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 8,  9, 10, 11]])
+>>> # Get row at index 2.
+>>> a[2]
+array([ 8,  9, 10, 11])
+>>> # Get element at index 2, 1.
+>>> a[2, 1]
+9
+>>> # Get column at index 1.
+>>> a[:, 1]
+array([1, 5, 9])
+>>> # Create a new array by transposing (swapping columns with rows).
+>>> a.transpose()
+array([[ 0,  4,  8],
+       [ 1,  5,  9],
+       [ 2,  6, 10],
+       [ 3,  7, 11]])
