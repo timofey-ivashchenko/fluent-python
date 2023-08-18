@@ -15,9 +15,9 @@
 >>> m3.tolist()
 [[0, 1], [2, 3], [4, 5]]
 >>> # Overwrite byte in m2 at row 1, column 1 with 22.
->>> m2[1,1] = 22
+>>> m2[1, 1] = 22
 >>> # Overwrite byte in m3 at row 1, column 1 with 33.
->>> m3[1,1] = 33
+>>> m3[1, 1] = 33
 >>> # Display original array, proving that the memory was shared among octets,
 >>> # m1, m2, and m3.
 >>> octets
